@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# Environment variables
+.env
+secrets.env
+
+# AI prompts (stored in GitHub secrets)
+prompts/OPENAI_SYSTEM_PROMPT.txt

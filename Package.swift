@@ -234,7 +234,10 @@ let package = Package(
         ),
         .target(
             name: "DatadogMachProfiler",
-            path: "DatadogProfiler/Mach"
+            path: "DatadogProfiler/Mach",
+            cxxSettings: [
+                .unsafeFlags(["-std=c++17"])
+            ]
         ),
         .testTarget(
             name: "DatadogProfilerTests",
@@ -242,7 +245,8 @@ let package = Package(
                 .target(name: "DatadogProfiler"),
                 .target(name: "TestUtilities"),
             ],
-            path: "DatadogProfiler/Tests"
+            path: "DatadogProfiler/Tests",
+            swiftSettings: [.define("SPM_BUILD")] + internalSwiftSettings
         ),
 
         .target(
